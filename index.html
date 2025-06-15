@@ -87,12 +87,13 @@
 											alt="Play"
 											class="play-button"
 											onclick="toggleAudio()" />
-											
+
 										<audio id="weddingAudio" preload="auto">
 											<source src="Nathaniel Bassey   What A Saviour.mp4" type="audio/mpeg">
 											Votre navigateur ne supporte pas l'audio.
 										</audio>
 									</div>
+
 
 
 								</div>
@@ -314,27 +315,30 @@
 	<!-- jQuery -->
 	<script src="dist/scripts.min.js"></script>
 	<script>
-		let isPlaying = false;
 		const audio = document.getElementById("weddingAudio");
 		const button = document.getElementById("playPauseButton");
 
 		function toggleAudio() {
-			if (isPlaying) {
-			audio.pause();
-			button.src = "images/play-button-image-transparent-3.png"; // remet le logo "play"
-			} else {
+			if (audio.paused) {
 			audio.play();
-			button.src = "images/pause-button-image-transparent-3.png"; // change pour le logo "pause"
+			} else {
+			audio.pause();
 			}
-			isPlaying = !isPlaying;
 		}
 
-		// Assure que le bouton revient à "play" quand la musique se termine
-		audio.addEventListener('ended', () => {
-			button.src = "images/play.png";
-			isPlaying = false;
+		audio.addEventListener("play", () => {
+			button.src = "images/play-button-image-transparent-3.png"; // ✅ assure-toi que ce chemin est bon
+		});
+
+		audio.addEventListener("pause", () => {
+			button.src = "images/pause-button-image-transparent-3.png";
+		});
+
+		audio.addEventListener("ended", () => {
+			button.src = "images/play-button-image-transparent-3.png";
 		});
 	</script>
+
 
 
 	</body>
