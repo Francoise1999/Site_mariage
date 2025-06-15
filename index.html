@@ -81,6 +81,14 @@
 									<h1>Mariage de </h1>
 									<h2>Harold &amp; Mélissa</h2>
 									<p><span>20 juillet 2025</span></p>
+									<div class="audio-player">
+										<img src="images/play-button-image-transparent-3.png" alt="Play" class="play-button" onclick="toggleAudio()" />
+										<audio id="weddingAudio" preload="auto">
+											<source src="Nathaniel Bassey   What A Saviour.mp4" type="audio/mpeg">
+											Votre navigateur ne supporte pas l'audio.
+										</audio>
+									</div>
+
 								</div>
 							</div>
 						</div>
@@ -299,6 +307,20 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
 	<!-- jQuery -->
 	<script src="dist/scripts.min.js"></script>
+	<script>
+		let isPlaying = false;
+		const audio = document.getElementById("weddingAudio");
+
+		function toggleAudio() {
+			if (isPlaying) {
+			audio.pause();
+			} else {
+			audio.play();
+			}
+			isPlaying = !isPlaying;
+		}
+	</script>
+
 	</body>
 </html>
 
