@@ -1277,19 +1277,20 @@ figure {
 
 /*   IMAGE PLAY */
 .audio-player {
-  margin-top: 20px;
+  margin-top: 30px;
   text-align: center;
 }
 
 .play-button {
-  width: 60px;
+  width: 70px;
   height: auto;
   cursor: pointer;
-  transition: transform 0.2s ease;
+  transition: transform 0.3s ease;
 }
 
 .play-button:hover {
   transform: scale(1.1);
 }
+
 
 

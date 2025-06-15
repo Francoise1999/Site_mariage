@@ -82,12 +82,18 @@
 									<h2>Harold &amp; Mélissa</h2>
 									<p><span>20 juillet 2025</span></p>
 									<div class="audio-player">
-										<img src="images/play-button-image-transparent-3.png" alt="Play" class="play-button" onclick="toggleAudio()" />
+										<img id="playPauseButton"
+											src="images/play-button-image-transparent-3.png"
+											alt="Play"
+											class="play-button"
+											onclick="toggleAudio()" />
+											
 										<audio id="weddingAudio" preload="auto">
 											<source src="Nathaniel Bassey   What A Saviour.mp4" type="audio/mpeg">
 											Votre navigateur ne supporte pas l'audio.
 										</audio>
 									</div>
+
 
 								</div>
 							</div>
@@ -310,16 +316,26 @@
 	<script>
 		let isPlaying = false;
 		const audio = document.getElementById("weddingAudio");
+		const button = document.getElementById("playPauseButton");
 
 		function toggleAudio() {
 			if (isPlaying) {
 			audio.pause();
+			button.src = "images/play-button-image-transparent-3.png"; // remet le logo "play"
 			} else {
 			audio.play();
+			button.src = "images/pause-button-image-transparent-3.png"; // change pour le logo "pause"
 			}
 			isPlaying = !isPlaying;
 		}
+
+		// Assure que le bouton revient à "play" quand la musique se termine
+		audio.addEventListener('ended', () => {
+			button.src = "images/play.png";
+			isPlaying = false;
+		});
 	</script>
+
 
 	</body>
 </html>
