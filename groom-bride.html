@@ -80,6 +80,18 @@
 								<div class="animate-box">
 									<h2>Deux cœurs, une histoire</h2>
 								</div>
+								<div class="audio-player">
+										<img id="playPauseButton"
+											src="images/play-button-image-transparent-3.png"
+											alt="Play"
+											class="play-button"
+											onclick="toggleAudio()" />
+
+										<audio id="weddingAudio" preload="auto">
+											<source src="Nathaniel Bassey   What A Saviour.mp4" type="audio/mpeg">
+											Votre navigateur ne supporte pas l'audio.
+										</audio>
+									</div>
 							</div>
 						</div>
 					</div>
@@ -258,6 +270,30 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
 	<!-- jQuery -->
 	<script src="dist/scripts.min.js"></script>
+	<script>
+		const audio = document.getElementById("weddingAudio");
+		const button = document.getElementById("playPauseButton");
+
+		function toggleAudio() {
+			if (audio.paused) {
+			audio.play();
+			} else {
+			audio.pause();
+			}
+		}
+
+		audio.addEventListener("play", () => {
+			button.src = "images/play-button-image-transparent-3.png"; // ✅ assure-toi que ce chemin est bon
+		});
+
+		audio.addEventListener("pause", () => {
+			button.src = "images/pause-button-image-transparent-3.png";
+		});
+
+		audio.addEventListener("ended", () => {
+			button.src = "images/play-button-image-transparent-3.png";
+		});
+	</script>
 	</body>
 </html>
 

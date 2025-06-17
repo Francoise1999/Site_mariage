@@ -1293,4 +1293,47 @@ figure {
 }
 
 
+/* Animation menu */
+
+
+@keyframes flashGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(1.2);
+  }
+}
+
+.fh5co-nav-toggle {
+  animation: flashGlow 1.5s infinite ease-in-out;
+  transition: transform 0.2s;
+}
+
+
+@keyframes extremeNeon {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 4px #ff00cc)
+            drop-shadow(0 0 8px #ff00cc)
+            drop-shadow(0 0 12px #ff00cc)
+            brightness(1.2);
+  }
+  50% {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 12px #ff00cc)
+            drop-shadow(0 0 20px #ff00cc)
+            drop-shadow(0 0 30px #ff00cc)
+            brightness(2);
+  }
+}
+
+.fh5co-nav-toggle {
+  animation: extremeNeon 1.5s infinite ease-in-out;
+  transition: all 0.3s ease;
+}
+
+
 
