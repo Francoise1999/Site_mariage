@@ -179,28 +179,39 @@
 			<h2 style="font-family: 'Montez', cursive; font-size: 3.2em; color: #f28e8e; margin-bottom: 40px;">
 				Programme du mariage 💍
 			</h2>
-			
+
+			<!-- Première ligne : Cérémonie et Photo -->
 			<div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px; max-width: 1000px; margin: 0 auto;">
 				
 				<!-- Bloc 1 : Cérémonie -->
 				<div style="flex: 1 1 300px; background-color: #fff; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 30px;">
-					<h3 style="color: #d95f5f; font-size: 1.6em; margin-bottom: 15px;">✨ Cérémonie civile & Bénédiction</h3>
-					<p><strong>📍 Adresse :</strong> 1630 Boulevard St-Jean-Baptiste Pointe-aux-trembles</p>
-					<p><strong>📅 Date :</strong> 20 juillet 2025</p>
-					<p><strong>🕒 Heure :</strong> 14H-16:30</p>
+				<h3 style="color: #d95f5f; font-size: 1.6em; margin-bottom: 15px;">✨ Cérémonie civile & Bénédiction</h3>
+				<p><strong>📍 Adresse :</strong> 1630 Boulevard St-Jean-Baptiste Pointe-aux-trembles, Montréal</p>
+				<p><strong>📅 Date :</strong> 20 juillet 2025</p>
+				<p><strong>🕒 Heure :</strong> 14H-16:30</p>
 				</div>
-				
+
 				<!-- Bloc 2 : Séance photo -->
 				<div style="flex: 1 1 300px; background-color: #fff; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 30px;">
-					<h3 style="color: #d95f5f; font-size: 1.6em; margin-bottom: 15px;">📸 Séance photo</h3>
-					<p><strong>📍 Adresse :</strong>1630 Boulevard St-Jean-Baptiste Pointe-aux-trembles</p>
-					<p><strong>📅 Date :</strong> 20 juillet 2025</p>
-					<p><strong>🕒 Heure :</strong> 18H-21H</p>
+				<h3 style="color: #d95f5f; font-size: 1.6em; margin-bottom: 15px;">📸 Séance photo</h3>
+				<p><strong>📍 Adresse :</strong> 11370 Rue Notre Dame E, Montréal-Est, Qc, H1W 3C4</p>
+				<p><strong>📅 Date :</strong> 20 juillet 2025</p>
+				<p><strong>🕒 Heure :</strong> 17H-18H</p>
 				</div>
-				
+
+			</div>
+
+			<!-- Deuxième ligne : Cocktail (centré) -->
+			<div style="display: flex; justify-content: center; margin-top: 40px;">
+				<div style="flex: 1 1 300px; max-width: 400px; background-color: #fff; border-radius: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); padding: 30px;">
+				<h3 style="color: #d95f5f; font-size: 1.6em; margin-bottom: 15px;">🍸 Cocktail</h3>
+				<p><strong>📍 Adresse :</strong> 1630 Boulevard St-Jean-Baptiste Pointe-aux-trembles</p>
+				<p><strong>📅 Date :</strong> 20 juillet 2025</p>
+				<p><strong>🕒 Heure :</strong> 18H-21H</p>
+				</div>
 			</div>
 		</div>
-		
+
 		
 		
 	<div id="fh5co-countdown">
@@ -320,24 +331,25 @@
 
 		function toggleAudio() {
 			if (audio.paused) {
-			audio.play();
+				audio.play();
 			} else {
-			audio.pause();
+				audio.pause();
 			}
 		}
 
 		audio.addEventListener("play", () => {
-			button.src = "images/play-button-image-transparent-3.png"; // ✅ assure-toi que ce chemin est bon
+			button.src = "images/pause-button-image-transparent-3.png"; // image pause
 		});
 
 		audio.addEventListener("pause", () => {
-			button.src = "images/pause-button-image-transparent-3.png";
+			button.src = "images/play-button-image-transparent-3.png"; // image play
 		});
 
 		audio.addEventListener("ended", () => {
 			button.src = "images/play-button-image-transparent-3.png";
 		});
 	</script>
+
 
 	</body>
 </html>
